@@ -45,10 +45,10 @@ public class Astronaut {
     }
 
     public void jump(){
-        velocity.x = 250;
+        velocity.y = 250;
     }
     public void tilt(){
 
-        velocity.y = (Gdx.input.getAccelerometerX()*25)*-1;
+        velocity.x = (Gdx.input.getAccelerometerX()*25)*-1;
     }
 }

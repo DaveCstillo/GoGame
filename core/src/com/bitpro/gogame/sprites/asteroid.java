@@ -35,6 +35,6 @@ public class asteroid {
     }
 
     public void reposition(float y){
-        position.set(50,y);
+        position.set(rand.nextInt(FLUCTUATION),y);
     }
 }

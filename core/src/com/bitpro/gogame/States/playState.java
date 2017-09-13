@@ -35,7 +35,7 @@ public class playState extends State {
         cam.setToOrtho(false, GoGame.WIDTH/2,GoGame.HEIGHT/2);
 
         asteroids = new Array<asteroid>();
-        for(int i = 1; i<=ASTEROIDS_COUNT; i++){
+        for(int i = 1; i>=ASTEROIDS_COUNT; i++){
             asteroids.add(new asteroid(i*(ASTEROID_SPACING + asteroid.asteroidWidth)));
         }
     }
@@ -63,8 +63,9 @@ public class playState extends State {
 
 
         for(asteroid ast : asteroids){
-            if(cam.position.y-(cam.viewportHeight/2)> ast.getPosition().y+ast.getTexture().getHeight()){
+            if(cam.position.x-(cam.viewportWidth/2)> ast.getPosition().x+ast.getTexture().getHeight()){
                 ast.reposition(ast.getPosition().y + ((asteroid.asteroidHeight+ASTEROID_SPACING)* ASTEROIDS_COUNT));
+                Gdx.app.log("Asteroide","Reposicionando");
             }
         }
         cam.update();
